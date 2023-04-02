@@ -19,7 +19,7 @@
 - Data set preparation
 - Tool development
 - Execution and testing
-- <span style="background-color:green;color:white;padding:3px">Optimization</span>
+- **`Optimization`**
 
 ### 1. Data set preparation
 
@@ -32,13 +32,13 @@
 * We used java to develop the tool.
 * We added a total of three commands into the tool.
     * `term_search` Prints the mails with all the given search terms in it.
-      * `enron_search term_search [term, term, term...]`
+        * `enron_search term_search [term, term, term...]`
     * `address_search` Prints all the emails sent and received by a given person.
-      * <span style="color:green">We also added further support for middle_name for better results.</span> 
-        * `enron_search address_search first_name last_name`
-        * `enron_search address_search first_name MIDDLE_NAME last_name`
-    * `interaction search` Prints all the mails exchanges between two users.
-       * `enron_search interaction_search mail_one mail_two`
+        * `We also added further support for middle_name for better results.`
+            * `enron_search address_search first_name last_name`
+            * `enron_search address_search first_name MIDDLE_NAME last_name`
+    * `interaction_search` Prints all the mails exchanges between two users.
+        * `enron_search interaction_search mail_one mail_two`
 
 * Each command has its own working principle explained later.
 
@@ -54,7 +54,7 @@
 * In the console enter any of the above listed command and provide valid input.
 * Result is Printed in the console.
 
-### <span style="background-color:green;color:white;padding:3px">Optimization</span>
+### `4. Optimization`
 
 We optimized the complete tool in multiple stages
 
@@ -74,8 +74,7 @@ We optimized the complete tool in multiple stages
       mail is completely terminated) , making the search radius 0.
     * To handle these scenarios we perform a deep search into all the files.
 
-- <span style="background-color:green;color:white;padding:3px">**Resource optimization using Parallel Processing and
-  Threads in java**</span>
+- ### `Resource optimization using Parallel Processing and Threads in java`
     * We used threads to divide the computation work between `multiple threads`.
     * We used all the available in a `Processor cores`.
     * So everytime we run a command the computation is distributed between multiple thread.
@@ -108,7 +107,7 @@ We optimized the complete tool in multiple stages
                                 * Save the address the result array.
     * Clean the result array and `remove any redundant addresses`.
     * Print the final result and size of result.<br>
-* `interaction search`
+* `interaction_search`
     * Get the list of all the mail boxes `associated to the both mail addresses given`.
         * Distribute the list between threads.
             * `Inside each thread`
@@ -123,11 +122,11 @@ We optimized the complete tool in multiple stages
 
 Below is a comparison table of processing time before and after optimization.
 
-| Command              | Initial processing time | Optimized processing time | Percentage                                     |
-|----------------------|-------------------------|---------------------------|------------------------------------------------|
-| `term_search`        | 26520 ms                | `4107 ms`                 | <span style="color:green">550 % Approx</span>  |
-| `address_search`     | 14060 ms                | `198 ms`                  | <span style="color:green">7000 % Approx</span> |
-| `interaction_search` | 13890 ms                | `231 ms`                  | <span style="color:green">6000 % Approx</span> |
+| Command              | Initial processing time | Optimized processing time | Percentage      |
+|----------------------|-------------------------|---------------------------|-----------------|
+| `term_search`        | 26520 ms                | 4107 ms                   | `550 % Approx`  |
+| `address_search`     | 14060 ms                | 198 ms                    | `7000 % Approx` |
+| `interaction_search` | 13890 ms                | 231 ms                    | `6000 % Approx` |
 
 All the results are in `milliseconds`.
 
