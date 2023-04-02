@@ -34,7 +34,7 @@
     * `term_search` Prints the mails with all the given search terms in it.
         * `enron_search term_search [term, term, term...]`
     * `address_search` Prints all the emails sent and received by a given person.
-        * `We also added further support for middle_name for better results.`
+        * We also added further support for middle_name for better results.
             * `enron_search address_search first_name last_name`
             * `enron_search address_search first_name MIDDLE_NAME last_name`
     * `interaction_search` Prints all the mails exchanges between two users.
