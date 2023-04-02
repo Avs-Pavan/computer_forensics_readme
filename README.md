@@ -66,7 +66,7 @@ We optimized the complete tool in multiple stages
     * Initially we searched all the mail boxes.
     * Cons of this approach is the as per mBox format all the mails belonging to a person are arranged into files with
       his name. So searching through the mail boxes is serious misuse of the processing power, and resources.
-    * A typical mailbox of mBox is named as `last_name.[0]first_name._mailbox_name`.
+    * A typical mailbox of mBox is named as `last_name-[0]first_name._mailbox_name`.
     * Example mailbox name of person named `John Arnold` is `enron.arnold-j._sent_mail` representing the `Sent mailbox`.
     * Decreasing the scope of the search will tremendously optimize the tool.
     * By doing so the radius of the search is decreased from a total of 3455 files to a mere 50-100 files.
